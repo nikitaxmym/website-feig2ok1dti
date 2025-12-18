@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Clinton Oh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --bg: #ffffff;
+            --text: #1e293b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 800; }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            padding: 0 5%;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--primary); }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Common button styles */
+        .btn {
+            display: inline-block;
+            padding: 1.1rem 3rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        /* Common section styles */
+        section {
+            padding: 100px 5%;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Card styles */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar { padding: 0 4%; }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) {
+            .btn { padding: 1rem 2rem; width: 100%; text-align: center; }
+            .card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Clinton Oh</div>
+        <div class="nav-links"><a href="index.html" class="nav-link ">Home</a>
+            <a href="about.html" class="nav-link ">About</a>
+            <a href="services.html" class="nav-link ">Services</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+            <a href="portfolio.html" class="nav-link ">Portfolio</a>
+            <a href="insights.html" class="nav-link ">Insights</a></div>
+    </nav>
+
+    <section style="background: linear-gradient(135deg, var(--primary) 0%, #1e40af 50%, var(--secondary) 100%); padding: 160px 0 80px; position: relative; overflow: hidden;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="36" cy="36" r="2"/><circle cx="6" cy="6" r="2"/><circle cx="36" cy="6" r="2"/><circle cx="6" cy="36" r="2"/></g></g></svg>') repeat;"></div>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2;">
+    <nav style="margin-bottom: 32px;">
+      <ol style="display: flex; align-items: center; gap: 8px; list-style: none; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; color: rgba(255, 255, 255, 0.8);">
+        <li>
+          <a href="/" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-weight: 500;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255, 255, 255, 0.8)'">Home</a>
+        </li>
+        <li style="color: rgba(255, 255, 255, 0.5);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </li>
+        <li style="color: white; font-weight: 600;">Page Header</li>
+      </ol>
+    </nav>
+    <div style="text-align: center;">
+      <h1 style="font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: clamp(3rem, 5vw, 4.5rem); line-height: 1.1; color: white; margin: 0; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); letter-spacing: -0.02em;">Page Header</h1>
+      <div style="margin-top: 24px; padding: 0 16px;">
+        <p style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); margin: 0; max-width: 600px; margin: 0 auto; line-height: 1.6; font-weight: 400;">Empowering Business Owners Through Strategic Innovation</p>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: linear-gradient(45deg, var(--accent), #fbbf24); border-radius: 50%; opacity: 0.1; filter: blur(40px);"></div>
+  <div style="position: absolute; top: -100px; right: -100px; width: 300px; height: 300px; background: linear-gradient(45deg, white, rgba(255, 255, 255, 0.3)); border-radius: 50%; opacity: 0.1; filter: blur(60px);"></div>
+</section>
+
+    <section style="padding: 80px 20px; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <div style="max-width: 600px; width: 100%; background: var(--bg); border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5); padding: 60px 40px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);"></div>
+    
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 2.5rem; color: var(--text); margin: 0 0 16px 0; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Let's Connect</h2>
+      <p style="font-family: 'Inter', sans-serif; color: var(--secondary); font-size: 1.1rem; margin: 0; line-height: 1.6;">Ready to transform your business? Let's discuss your strategic innovation needs.</p>
+    </div>
+
+    <form style="display: flex; flex-direction: column; gap: 24px;">
+      <div style="position: relative;">
+        <input type="text" id="name" required style="width: 100%; padding: 20px 16px 12px 16px; border: 2px solid #e2e8f0; border-radius: 16px; font-family: 'Inter', sans-serif; font-size: 16px; background: var(--bg); color: var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 0 0 3px rgba(37, 99, 235, 0.1)'; this.nextElementSibling.style.transform='translateY(-8px) scale(0.85)'; this.nextElementSibling.style.color='var(--primary)';" onblur="if(!this.value) { this.nextElementSibling.style.transform='translateY(0) scale(1)'; this.nextElementSibling.style.color='var(--secondary)'; } this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';" oninput="if(this.value) { this.nextElementSibling.style.transform='translateY(-8px) scale(0.85)'; this.nextElementSibling.style.color='var(--primary)'; } else { this.nextElementSibling.style.transform='translateY(0) scale(1)'; this.nextElementSibling.style.color='var(--secondary)'; }">
+        <label for="name" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; color: var(--secondary); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; background: var(--bg); padding: 0 4px;">Your Name</label>
+      </div>
+
+      <div style="position: relative;">
+        <input type="email" id="email" required style="width: 100%; padding: 20px 16px 12px 16px; border: 2px solid #e2e8f0; border-radius: 16px; font-family: 'Inter', sans-serif; font-size: 16px; background: var(--bg); color: var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); outline: none; box-sizing: border-box;" onfocus="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 0 0 3px rgba(37, 99, 235, 0.1)'; this.nextElementSibling.style.transform='translateY(-8px) scale(0.85)'; this.nextElementSibling.style.color='var(--primary)';" onblur="if(!this.value) { this.nextElementSibling.style.transform='translateY(0) scale(1)'; this.nextElementSibling.style.color='var(--secondary)'; } this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';" oninput="if(this.value) { this.nextElementSibling.style.transform='translateY(-8px) scale(0.85)'; this.nextElementSibling.style.color='var(--primary)'; } else { this.nextElementSibling.style.transform='translateY(0) scale(1)'; this.nextElementSibling.style.color='var(--secondary)'; }">
+        <label for="email" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; color: var(--secondary); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; background: var(--bg); padding: 0 4px;">Email Address</label>
+      </div>
+
+      <div style="position: relative;">
+        <textarea id="message" required rows="5" style="width: 100%; padding: 20px 16px 12px 16px; border: 2px solid #e2e8f0; border-radius: 16px; font-family: 'Inter', sans-serif; font-size: 16px; background: var(--bg); color: var(--text); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); outline: none; resize: vertical; min-height: 120px; box-sizing: border-box;" onfocus="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 0 0 3px rgba(37, 99, 235, 0.1)'; this.nextElementSibling.style.transform='translateY(-8px) scale(0.85)'; this.nextElementSibling.style.color='var(--primary)';" onblur="if(!this.value) { this.nextElementSibling.style.transform='translateY(0) scale(1)'; this.nextElementSibling.style.color='var(--secondary)'; } this.style.borderColor='#e2e8f0'; this.style.boxShadow='none';" oninput="if(this.value) { this.nextElementSibling.style.transform='translateY(-8px) scale(0.85)'; this.nextElementSibling.style.color='var(--primary)'; } else { this.nextElementSibling.style.transform='translateY(0) scale(1)'; this.nextElementSibling.style.color='var(--secondary)'; }"></textarea>
+        <label for="message" style="position: absolute; left: 16px; top: 24px; font-family: 'Inter', sans-serif; color: var(--secondary); transition: all 0.3s cubic-bezier(
+
+    <section style="padding: 80px 20px; background: var(--bg); font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 3rem; color: var(--text); margin: 0 0 20px 0; line-height: 1.2;">Get In Touch</h2>
+      <p style="font-size: 1.2rem; color: var(--secondary); max-width: 600px; margin: 0 auto; line-height: 1.6;">Ready to transform your business? Let's discuss how strategic innovation can drive your success.</p>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px;">
+      <div style="background: linear-gradient(135deg, var(--bg) 0%, #f8fafc 100%); border-radius: 24px; padding: 40px 30px; text-align: center; box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.1); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 30px 60px rgba(37, 99, 235, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 40px rgba(37, 99, 235, 0.08)'">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2rem;">📍</div>
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--text); margin: 0 0 15px 0;">Office Address</h3>
+        <p style="color: var(--secondary); font-size: 1rem; line-height: 1.6; margin: 0;">123 Business District<br>Innovation Plaza, Suite 500<br>New York, NY 10001</p>
+      </div>
+      
+      <div style="background: linear-gradient(135deg, var(--bg) 0%, #f8fafc 100%); border-radius: 24px; padding: 40px 30px; text-align: center; box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.1); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 30px 60px rgba(37, 99, 235, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 40px rgba(37, 99, 235, 0.08)'">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2rem;">📞</div>
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--text); margin: 0 0 15px 0;">Phone Number</h3>
+        <p style="color: var(--secondary); font-size: 1rem; line-height: 1.6; margin: 0;">Direct: +1 (555) 123-4567<br>Mobile: +1 (555) 987-6543<br>Available Mon-Fri, 9AM-6PM</p>
+      </div>
+      
+      <div style="background: linear-gradient(135deg, var(--bg) 0%, #f8fafc 100%); border-radius: 24px; padding: 40px 30px; text-align: center; box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08); border: 1px solid rgba(37, 99, 235, 0.1); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 30px 60px rgba(37, 99, 235, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 20px 40px rgba(37, 99, 235, 0.08)'">
+        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2rem;">✉️</div>
+        <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--text); margin: 0 0 15px 0;">Email Address</h3>
+        <p style="color: var(--secondary); font-size: 1rem; line-height: 1.6; margin: 0;">clinton@clintonoh.com<br>info@clintonoh.com<br>Quick response within 24 hours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section style="padding: 80px 20px; background: var(--bg);">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 2.5rem; color: var(--text); margin-bottom: 1rem;">Find Our Location</h2>
+    <p style="font-family: 'Inter', sans-serif; font-size: 1.125rem; color: var(--secondary); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Visit our office to discuss how we can empower your business through strategic innovation.</p>
+    
+    <div style="position: relative; max-width: 800px; margin: 0 auto; padding: 4px; background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary)); border-radius: 28px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div style="background: var(--bg); border-radius: 24px; padding: 80px 40px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, rgba(37, 99, 235, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%); pointer-events: none;"></div>
+        
+        <div style="position: relative; z-index: 2;">
+          <div style="width: 80px; height: 80px; margin: 0 auto 2rem; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);">
+            <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          
+          <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.75rem; color: var(--text); margin-bottom: 1rem;">Interactive Map Coming Soon</h3>
+          
+          <p style="font-family: 'Inter', sans-serif; font-size: 1.125rem; color: var(--secondary); margin-bottom: 2rem; line-height: 1.6;">We're working on an enhanced map experience to make it easier for you to find us and plan your visit.</p>
+          
+          <div style="background: rgba(37, 99, 235, 0.1); border: 2px dashed var(--primary); border-radius: 24px; padding: 40px 20px; margin: 2rem 0;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--primary); font-weight: 600; margin-bottom: 0.5rem;">Clinton Oh Business Center</div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 0.875rem; color: var(--secondary);">Detailed location and directions will be available soon</div>
+          </div>
+          
+          <button style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; padding: 16px 32px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1rem; border-radius: 50px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 35px rgba(37, 99, 235, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 25px rgba(37, 99, 235, 0.3)';">Get Directions</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer style="background-color: #0a0a0a; color: #ffffff; padding: 80px 0 0 0; font-family: 'Inter', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px; margin-bottom: 60px;">
+      
+      <!-- Brand Column -->
+      <div style="grid-column: span 1;">
+        <div style="margin-bottom: 32px;">
+          <h3 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 28px; color: var(--primary); margin-bottom: 16px; letter-spacing: -0.5px;">Clinton Oh</h3>
+          <p style="color: #64748b; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">Empowering Business Owners Through Strategic Innovation</p>
+          <p style="color: #64748b; font-size: 14px; line-height: 1.6;">Transforming businesses through strategic thinking, innovative solutions, and proven methodologies that drive sustainable growth.</p>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div style="grid-column: span 1;">
+        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 18px; color: #ffffff; margin-bottom: 24px;">Quick Links</h4>
+        <nav style="display: flex; flex-direction: column; gap: 16px;">
+          <a href="#services" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block;" onmouseover="this.style.color='var(--primary)'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#64748b'; this.style.transform='translateX(0)'">Services</a>
+          <a href="#about" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block;" onmouseover="this.style.color='var(--primary)'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#64748b'; this.style.transform='translateX(0)'">About</a>
+          <a href="#case-studies" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block;" onmouseover="this.style.color='var(--primary)'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#64748b'; this.style.transform='translateX(0)'">Case Studies</a>
+          <a href="#resources" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block;" onmouseover="this.style.color='var(--primary)'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#64748b'; this.style.transform='translateX(0)'">Resources</a>
+          <a href="#contact" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-block;" onmouseover="this.style.color='var(--primary)'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#64748b'; this.style.transform='translateX(0)'">Contact</a>
+        </nav>
+      </div>
+
+      <!-- Contact Info Column -->
+      <div style="grid-column: span 1;">
+        <h4 style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 18px; color: #ffffff; margin-bottom: 24px;">Get In Touch</h4>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #ffffff; font-size: 16px;">📧</span>
+            </div>
+            <a href="mailto:hello@clintonoh.com" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#64748b'">hello@clintonoh.com</a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #ffffff; font-size: 16px;">📱</span>
+            </div>
+            <a href="tel:+1234567890" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#64748b'">+1 (234) 567-8900</a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+              <span style="color: #ffffff; font-size: 16px;">💼</span>
+            </div>
+            <a href="https://linkedin.com/in/clintonoh" style="color: #64748b; text-decoration: none; font-size: 14px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#64748b'">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div style="border-top: 1px solid #1e293b; padding: 32px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <p style="color: #64748b; font-size: 14px; margin: 0;">© 2024 Clinton Oh. All rights reserved.</p>
+      <div style="display: flex
+</body>
+</html>
